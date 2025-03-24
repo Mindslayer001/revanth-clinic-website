@@ -53,7 +53,7 @@
             <a href="#services" class="text-hover hover:text-gold">Services</a>
             <a href="#appointment" class="text-hover hover:text-gold">Appointment</a>
             <a href="#contact" class="text-hover hover:text-gold">Contact</a>
-            <a href="./blogs_videos.html" class="text-hover hover:text-gold">blogs and videos</a>
+            <a href="./blogs_videos.html" class="text-hover hover:text-gold">Blogs and Threads</a>
           </div>
         </div>
         <div class="lg:hidden">
@@ -98,7 +98,7 @@
             <a href="#services" class="text-hover hover:text-gold">Services</a>
             <a href="#appointment" class="text-hover hover:text-gold">Appointment</a>
             <a href="#contact" class="text-hover hover:text-gold">Contact</a>
-            <a href="./blogs_videos.html" class="text-hover hover:text-gold">blogs and videos</a>
+            <a href="./blogs_videos.html" class="text-hover hover:text-gold">Blogs and Threads</a>
 
             <a
             href="#"
@@ -406,20 +406,49 @@
               Take the first step towards a healthier future. Schedule your consultation easily and quickly. Your neurological health is our priority.
             </p>
 
-            <form action="" class="mt-11 flex flex-col gap-7">
+            <form id="bookingForm" class="mt-11 flex flex-col gap-7">
               <input type="text" name="name" id="name" autocomplete="given-name" placeholder="Your Name" class="block w-full rounded-2xl border border-black border-opacity-40 py-6 px-8 text-black text-base placeholder:text-gray-text">
+              
               <input type="number" name="phone" id="phone" autocomplete="given-phone" placeholder="Your Phone" class="block w-full rounded-2xl border border-black border-opacity-40 py-6 px-8 text-black text-base placeholder:text-gray-text">
+              
               <input type="email" name="email" id="email" autocomplete="given-email" placeholder="Your Email" class="block w-full rounded-2xl border border-black border-opacity-40 py-6 px-8 text-black text-base placeholder:text-gray-text">
+              
               <div class="flex gap-4">
                 <input type="date" name="date" id="date" class="flex-auto rounded-2xl border border-black border-opacity-40 py-6 px-8 text-black text-base placeholder:text-gray-text">
                 <input type="time" name="time" id="time" placeholder="Select Time" class="flex-auto rounded-2xl border border-black border-opacity-40 py-6 px-8 text-black text-base placeholder:text-gray-text">
               </div>
-              <button class="primary-btn">Book Now <iconify-icon icon="gg:arrow-right" class="text-white text-2xl"></iconify-icon></button>
+            
+              <button type="button" onclick="sendWhatsApp()" class="primary-btn">
+                Book Now <iconify-icon icon="gg:arrow-right" class="text-white text-2xl"></iconify-icon>
+              </button>
             </form>
+            
+            <script>
+              function sendWhatsApp() {
+                let name = document.getElementById("name").value;
+                let phone = document.getElementById("phone").value;
+                let email = document.getElementById("email").value;
+                let date = document.getElementById("date").value;
+                let time = document.getElementById("time").value;
+                
+                let message = `Booking Details:%0A👤 Patient Name: ${name}%0A📞 Phone: ${phone}%0A📧 Email: ${email}%0A📅 Date: ${date}%0A⏰ Time: ${time}`;
+                
+                let whatsappURL = `https://wa.me/918826340766?text=${message}`; // Replace XXXXXXXXXX with your WhatsApp number
+                
+                window.open(whatsappURL, "_blank");
+              }
+            </script>
+            
           </div>
           <div class="md:w-1/2">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4055.952202437098!2d83.32772912265098!3d17.732247103241892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a394325f648dec7%3A0x515195711a220e6!2sRiver%20Store%20Visakhapatnam!5e0!3m2!1sen!2sin!4v1740940516513!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-xl w-full h-96 md:h-full"></iframe>
-
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.286637765306!2d83.33076319999999!3d17.731128299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a394355d398506b%3A0x8acac06da3cba68!2sDr.%20Revanth&#39;s%20Brain%20%26%20Spine%20Centre!5e0!3m2!1sen!2sin!4v1742754286670!5m2!1sen!2sin" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            class="rounded-xl w-full h-96 md:h-full">
+    </iframe>
+    
           </div>
         </div>
       </section>
@@ -458,11 +487,13 @@
           <div>
             <h4 class="font-semibold text-2xl !leading-[140%] mb-4">Quick Links</h4>
             <ul class="text-gray-text text-lg flex flex-col gap-3">
-              <li class="!leading-[150%]"><a href="#" class="text-hover">Home</a></li>
-              <li class="!leading-[150%]"><a href="#" class="text-hover">Services</a></li>
-              <li class="!leading-[150%]"><a href="#" class="text-hover">About Us</a></li>
-              <li class="!leading-[150%]"><a href="#" class="text-hover">Contact</a></li>
-            </ul>
+              <li class="!leading-[150%]"><a href="index.html" class="text-hover">Home</a></li>
+              <li class="!leading-[150%]"><a href="#services" class="text-hover">Services</a></li>
+              <li class="!leading-[150%]"><a href="#about" class="text-hover">About Us</a></li>
+              <li class="!leading-[150%]"><a href="#contact" class="text-hover">Contact</a></li>
+              <li class="!leading-[150%]"><a href="#appointment" class="text-hover">Appointment</a></li>
+              
+          </ul>
           </div>
         </div>
       </section>
